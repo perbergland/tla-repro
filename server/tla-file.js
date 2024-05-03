@@ -10,3 +10,7 @@ console.log("before tla init");
 export const tlaValue = await asyncMethod();
 
 console.log("after tla init");
+
+export const someFunction = ()=>{
+    return 7;
+}

@@ -1,7 +1,7 @@
 import { Meteor } from "meteor/meteor";
-import { tlaValue } from "./tla-file";
+import { tlaValue, someFunction } from "./tla-file";
 
 Meteor.startup(()=>{
     console.log("Starting!")
-    console.dir({tlaValue})
+    console.dir({tlaValue, someFunction})
 });
