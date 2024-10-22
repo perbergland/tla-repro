@@ -1,13 +1,22 @@
 import { Meteor } from "meteor/meteor";
-import { tlaValue } from "./tla-file";
 
 Meteor.startup(()=>{
     console.log("Starting!")
-    console.log("Should show { tlaValue: 4 } and not { tlaValue: undefined }");
-    if (tlaValue === undefined) {
-        console.error({ tlaValue });
+    
+    const tlaRequire = require("./tla-file");
+    const noTlaRequire = require("./no-tla-file");
+
+    const errors = []
+    if (!("then" in tlaRequire)) {
+        errors.push("tla-file isn’t marked as an async module")
+    }
+    if ("then" in noTlaRequire) {
+        errors.push("no-tla-file is marked as an async module")
+    }
+    if (errors.length > 0) {
+        console.error("Errors:", errors.join("\n"))
     }
     else {
-        console.log({ tlaValue });
+        console.info("No errors detected")
     }
 });
