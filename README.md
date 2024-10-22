@@ -28,7 +28,7 @@ With meteor 3.0.4 you will still get an error because of https://github.com/mete
 You can patch reify locally:
 
 ```
-ode .meteor/local/isopacks/ecmascript/plugin.compile-ecmascript.os/npm/node_modules/meteor/babel-compiler/node_modules/@meteorjs/reify/lib/import-export-visitor.js
+code .meteor/local/isopacks/ecmascript/plugin.compile-ecmascript.os/npm/node_modules/meteor/babel-compiler/node_modules/@meteorjs/reify/lib/import-export-visitor.js
 ```
 
 Replace visitAwaitExpression with the version in [this PR](https://github.com/meteor/reify/issues/12).
